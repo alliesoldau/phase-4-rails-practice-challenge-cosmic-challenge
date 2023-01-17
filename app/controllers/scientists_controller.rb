@@ -16,7 +16,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_message
     #POST
     def create
         scientist = Scientist.create!(scientist_params)
-        render json: scientist, serializer: ScientistsSerializer, status: :accepted
+        render json: scientist, serializer: ScientistsSerializer, status: :created
     end
 
     #PATCH

@@ -1,3 +1,7 @@
 class MissionPlanetSerializer < ActiveModel::Serializer
-  has_one :planet, serializer: PlanetsSerializer
+  attributes :planet_attributes
+
+  def planet_attributes
+    object.planet
+  end
 end

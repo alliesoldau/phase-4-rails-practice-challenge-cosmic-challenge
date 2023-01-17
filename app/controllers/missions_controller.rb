@@ -4,7 +4,7 @@ class MissionsController < ApplicationController
     #POST
     def create
         mission = Mission.create!(mission_params)
-        render json: mission, status: :accepted, serializer: MissionPlanetSerializer
+        render json: mission.planet, status: :created
     end
 
     private
